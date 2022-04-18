@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import {Switch, Route} from 'react-router-dom';
+
 import SneakerCollection from './Components/SneakerCollection';
 import Header from './Components/Header'
 import WishList from "./Components/WishList";
@@ -10,15 +11,16 @@ import Home from './Components/Home';
 function App() {
   const [sneakers, setSneakers] = useState([])
 
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Host': 'the-sneaker-database.p.rapidapi.com',
-      'X-RapidAPI-Key': '114304eb3bmshd241e59ec60bb79p1a3acbjsne5e39a45f3af'
-    }
-  };
   
   useEffect(() => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Host': 'the-sneaker-database.p.rapidapi.com',
+        'X-RapidAPI-Key': '114304eb3bmshd241e59ec60bb79p1a3acbjsne5e39a45f3af'
+      }
+    };
+
     fetch('https://the-sneaker-database.p.rapidapi.com/sneakers?limit=20', options)
     .then(response => response.json())
     .then(response => setSneakers(response.results))
@@ -35,16 +37,16 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route path="sneakers/" >
+        <Route path="/sneakers" >
           <SneakerContainer sneakers={sneakers} />
         </Route>
-        <Route path="sneakers/:id" >
+        <Route path="/sneakers/:id" >
           <SneakerDetails />
         </Route>
         <Route path='/sneakercollection' >
           <SneakerCollection />
         </Route>
-        <Route path="wishlist" >
+        <Route path="/wishlist" >
           <WishList />
         </Route>
       </Switch>
