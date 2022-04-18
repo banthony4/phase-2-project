@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.SneakerCollection{
+  list-style: none;
+  width: 100%;
+}
+.Sneaker {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  display: inline-grid;
+  outline: 1px solid black;
+  text-align: center;
+}
+
+.details p{
+  display: inline;
+}
+
+.header{
+  text-align: center;
+  width: 150px;
+  height: 100%;
+}
+
+#year{
+  float: left;
+  padding-left: 10px;
+}
+#brand{
+  float: right;
+  padding-right: 10px;
+}
+
+img{
+  text-align: center;
+  height: 200px;
+  width: auto;
+  position: relative;
+  bottom: 0;
+}
