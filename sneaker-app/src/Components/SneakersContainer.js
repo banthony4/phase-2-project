@@ -7,9 +7,11 @@ function SneakerContainer({ sneakers }) {
     })
   }
   return (
-    <ul className="SneakerCollection">
-      {RenderSneakers()}
-    </ul>
+    <div>
+      <ul className="SneakerCollection">
+        {RenderSneakers()}
+      </ul>
+    </div>
   );
 }
 

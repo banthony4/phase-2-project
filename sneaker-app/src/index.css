@@ -47,6 +47,11 @@ img{
   text-align: center;
   height: 200px;
   width: auto;
-  position: relative;
-  bottom: 0;
+}
+#details-img{
+  text-align: center;
+  height: 500px;
+  width: auto;
+  margin-top: -100px;
+  margin-bottom: -100px;
 }

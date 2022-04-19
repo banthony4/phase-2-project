@@ -21,7 +21,7 @@ function App() {
       }
     };
 
-    fetch('https://the-sneaker-database.p.rapidapi.com/sneakers?limit=20', options)
+    fetch('https://the-sneaker-database.p.rapidapi.com/sneakers?limit=100', options)
     .then(response => response.json())
     .then(response => setSneakers(response.results))
     .catch(err => console.error(err));
@@ -40,7 +40,7 @@ function App() {
         <Route path="/sneakers" >
           <SneakerContainer sneakers={sneakers} />
         </Route>
-        <Route path="/sneakers/:id" >
+        <Route path="/sneaker/:id" >
           <SneakerDetails />
         </Route>
         <Route path='/sneakercollection' >
