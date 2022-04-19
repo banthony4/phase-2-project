@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-function SneakerDetails() {
+function SneakerDetails({ addToCollection, addToWishlist }) {
   const [sneaker, setSneaker] = useState({})
   const { id } = useParams();
 
@@ -15,7 +15,6 @@ function SneakerDetails() {
         'X-RapidAPI-Key': '114304eb3bmshd241e59ec60bb79p1a3acbjsne5e39a45f3af'
       }
     };
-
     fetch(`https://the-sneaker-database.p.rapidapi.com/sneakers/${id}`, options)
       .then(response => response.json())
       .then(sneak => setSneaker(sneak.results[0]))
@@ -31,8 +30,8 @@ function SneakerDetails() {
       <p>Story:</p>
       {story ? <p>{story}</p> : 'N/A'}
       <br></br>
-      <button>Buy Now</button>
-      <button>Add to Wishlist</button>
+      <button onClick={() => addToCollection(sneaker)}>Buy Now</button>
+      <button onClick={() => addToWishlist(sneaker)} >Add to Wishlist</button>
     </div>
   );
 }

@@ -10,7 +10,8 @@ import Home from './Components/Home';
 
 function App() {
   const [sneakers, setSneakers] = useState([])
-
+  const [collection, setCollection] = useState([])
+  const [wishlist, setWishlist] = useState([])
   
   useEffect(() => {
     const options = {
@@ -20,13 +21,20 @@ function App() {
         'X-RapidAPI-Key': '114304eb3bmshd241e59ec60bb79p1a3acbjsne5e39a45f3af'
       }
     };
-
     fetch('https://the-sneaker-database.p.rapidapi.com/sneakers?limit=100', options)
     .then(response => response.json())
     .then(response => setSneakers(response.results))
     .catch(err => console.error(err));
   }, []) 
 
+  const addToCollection = (sneak) => {
+    console.log(sneak)
+    setCollection(sneakers.filter(kick => kick.id === sneak.id))
+  }
+  const addToWishlist = (sneak) => {
+    console.log(sneak)
+    setWishlist(sneakers.filter(kick => kick.id === sneak.id))
+  }
 
   return (
     <div className="App">
@@ -41,13 +49,13 @@ function App() {
           <SneakerContainer sneakers={sneakers} />
         </Route>
         <Route path="/sneaker/:id" >
-          <SneakerDetails />
+          <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />
         </Route>
         <Route path='/sneakercollection' >
-          <SneakerCollection />
+          <SneakerCollection collection={collection} />
         </Route>
         <Route path="/wishlist" >
-          <WishList />
+          <WishList wishlist={wishlist} />
         </Route>
       </Switch>
     </div>
