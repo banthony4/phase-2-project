@@ -5,19 +5,20 @@ function SneakerDetails({ addToCollection, addToWishlist }) {
   const [sneaker, setSneaker] = useState({})
   const { id } = useParams();
 
-  const { media, name, story, releaseDate, retailPrice } = sneaker
   
   useEffect(() => {
     fetch(`http://localhost:4000/sneakers/${id}`)
-      .then(response => response.json())
-      .then(sneak => setSneaker(sneak))
+    .then(r => r.json())
+    .then(sneak => setSneaker(sneak))
   },[id])
-
+  
+  const { image, name, story, releaseDate, retailPrice } = sneaker
+  
   return (
     <div className="SneakerDetails">
       <h1>Sneaker Details:</h1>
-      <img id="details-img" src={media.imageUrl} alt={name}></img>
       <h3>Name: {name}</h3>
+      <img id="details-img" src={image} alt={name}></img>
       <p>Release Date: {releaseDate}</p>
       <p>Price: {retailPrice}</p>
       <p>Story:</p>

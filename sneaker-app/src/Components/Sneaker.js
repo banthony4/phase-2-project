@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 
 
 function Sneaker({ sneaker }) {
-  const {id, brand, media, name, year} = sneaker
+  const {id, brand, image, name, year} = sneaker
 
   return (
-    media.imageUrl === null ? null :
+    image ? 
       <li className="Sneaker">
         <section className='details'>
           <p id='year'>{year}</p>
@@ -13,11 +13,12 @@ function Sneaker({ sneaker }) {
         </section>
         <h5>{name}</h5>
         <figure>
-          <Link to={`/sneaker/${id}`}>
-            <img src={media.imageUrl} alt={name}></img>
+          <Link to={`/sneakers/${id}/details`}>
+            <img src={image} alt={name}></img>
           </Link>
         </figure>
       </li>
+      : null
   );
 }
 

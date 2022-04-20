@@ -21,11 +21,11 @@ function App() {
 
   const addToCollection = (sneak) => {
     console.log(sneak)
-    setCollection(sneakers.filter(kick => kick.id === sneak.id))
+    setCollection(sneak)
   }
   const addToWishlist = (sneak) => {
     console.log(sneak)
-    setWishlist(sneakers.filter(kick => kick.id === sneak.id))
+    setWishlist(sneak)
   }
 
   return (
@@ -37,11 +37,11 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
+        <Route path="/sneakers/:id/details" >
+          <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />
+        </Route>
         <Route path="/sneakers" >
           <SneakerContainer sneakers={sneakers} />
-        </Route>
-        <Route path="/sneaker/:id" >
-          <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />
         </Route>
         <Route path='/sneakercollection' >
           <SneakerCollection collection={collection} />

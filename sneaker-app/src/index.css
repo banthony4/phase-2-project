@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(90deg, rgba(0,212,255,1) 0%, white 50%, rgba(0,212,255,1) 100%); */
+  /* background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiFQFjIeMg6WIOYYx3l5DMd--2zlqasV4gag&usqp=CAU") ; */
+  /* background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-FaMkK5noIc3jAlNc8n_zLwEsAWf_gFc2SQ&usqp=CAU"); */
+  background-image:url("https://swall.teahub.io/photos/small/68-682877_sneaker-wallpapers-group-.jpg"); 
+  /* background-image:url("src/Components/react-project.jpg"); */
+  background-size:contain;
+  background-position: center;
 }
 
 code {
@@ -12,8 +19,19 @@ code {
     monospace;
 }
 .SneakerCollection{
+  text-align: center;
   list-style: none;
   width: 100%;
+  
+  
+  
+}
+.react-project.jpg
+{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 20;
 }
 .Sneaker {
   width: 400px;
@@ -22,6 +40,8 @@ code {
   display: inline-grid;
   outline: 1px solid black;
   text-align: center;
+  background-color:lightsteelblue;
+  
 }
 
 .details p{
@@ -32,7 +52,72 @@ code {
   text-align: center;
   width: 150px;
   height: 100%;
+  
 }
+
+.button{
+  text-align: center; 
+  letter-spacing:2px;
+  padding-right: 180px;
+  padding-left: 195px; 
+  font-weight: bold ;
+  font-family: fantasy;
+  color: white;
+  background-color: black;
+  opacity: .80;
+  border-radius:5rem;
+    box-shadow: 1px 2.9px 16px rgba(27,139,249,0.4);
+    
+  
+  
+}
+.button1{
+  text-align: center; 
+  letter-spacing:2px;
+  padding-right: 180px;
+  padding-left: 190px; 
+  font-weight: bold ;
+  font-family: fantasy;
+  color: white;
+  background-color: black;
+  opacity: .80;
+  border-radius: 5rem;
+  box-shadow: 1px 2.9px 16px rgba(27,139,249,0.4);
+  }
+/* .button1:hover{opacity: 1} */
+.button1:hover{
+  opacity: 1;
+  background-color: lightblue;
+  color: black;}
+.button:hover{
+  opacity:1;
+  background-color:lightblue;
+  color: black;
+}
+.branding:hover{
+  opacity:1;
+  background-color:lightblue;
+  color: black;
+
+}
+
+.branding
+{
+    text-align: center;
+    font-family:fantasy;
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:2.2px;
+    background-color:black;
+    opacity:.80;
+    padding:15px 50px;
+    border-radius:5rem;
+    box-shadow: 1px 2.9px 16px rgba(27,139,249,0.4);
+    
+    
+}
+
+  
 
 #year{
   float: left;
@@ -47,10 +132,6 @@ img{
   text-align: center;
   height: 200px;
   width: auto;
-}
-#details-img{
-  text-align: center;
-  height: 400px;
-  width: auto;
-  margin-bottom: -50px;
+  position: relative;
+  bottom: 0;
 }
