@@ -1,7 +1,19 @@
+import Sneaker from "./Sneaker"
 
-function SneakerCollection() {
+function SneakerCollection({collection}) {
+  console.log('collection: ', collection);
+
+  const renderCollection = () => {
+    return collection.map(sneak => {
+      return <Sneaker key={sneak.id} sneaker={sneak} />
+    })
+  }
+
   return (
-    <div className="Sneaker Collection">
+    <div className="SneakerCollection">
+      <ul>
+        {renderCollection()}
+      </ul>
     </div>
   )
 }

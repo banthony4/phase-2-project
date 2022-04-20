@@ -10,6 +10,7 @@ import Home from './Components/Home';
 
 function App() {
   const [sneakers, setSneakers] = useState([])
+  const [mostPopular, setMostPopular] = useState([])
   const [collection, setCollection] = useState([])
   const [wishlist, setWishlist] = useState([])
   
@@ -17,15 +18,28 @@ function App() {
     fetch('http://localhost:4000/sneakers')
     .then(r => r.json())
     .then(data => setSneakers(data))
+  }, [])
+  useEffect(() => {
+    fetch('http://localhost:4000/popular')
+    .then(r => r.json())
+    .then(data => setMostPopular(data))
+  }, []) 
+  useEffect(() => {
+    fetch('http://localhost:4000/collection')
+    .then(r => r.json())
+    .then(data => setCollection(data))
+  }, []) 
+  useEffect(() => {
+    fetch('http://localhost:4000/wishlist')
+    .then(r => r.json())
+    .then(data => setWishlist(data))
   }, []) 
 
-  const addToCollection = (sneak) => {
-    console.log(sneak)
-    setCollection(sneak)
+  const addToCollection = (newSneaker) => {
+    setCollection(sneaks => [...sneaks, newSneaker])
   }
-  const addToWishlist = (sneak) => {
-    console.log(sneak)
-    setWishlist(sneak)
+  const addToWishlist = (newSneaker) => {
+    setWishlist(sneaks => [...sneaks, newSneaker])
   }
 
   return (
@@ -35,7 +49,7 @@ function App() {
       </Header>
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home mostPopular={mostPopular}/>
         </Route>
         <Route path="/sneakers/:id/details" >
           <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />

@@ -1,7 +1,7 @@
 import Sneaker from './Sneaker'
 
 function SneakerContainer({ sneakers }) {
-  const RenderSneakers = () => {
+  const renderSneakers = () => {
     return sneakers.map(sneak => {
       return <Sneaker key={sneak.id} sneaker={sneak} />
     })
@@ -23,8 +23,8 @@ function SneakerContainer({ sneakers }) {
         <input type='checkbox' id='mens' name='mens'>Mens</input>
         <input type='checkbox' id='womens' name='womens'>Womens</input>
       </form> */}
-      <ul className="SneakerCollection">
-        {RenderSneakers()}
+      <ul className="SneakerContainer">
+        {renderSneakers()}
       </ul>
     </div>
   );

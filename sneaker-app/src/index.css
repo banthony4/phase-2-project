@@ -22,9 +22,6 @@ code {
   text-align: center;
   list-style: none;
   width: 100%;
-  
-  
-  
 }
 .react-project.jpg
 {
@@ -40,8 +37,16 @@ code {
   display: inline-grid;
   outline: 1px solid black;
   text-align: center;
-  background-color:lightsteelblue;
-  
+  background-color:white;
+}
+.Sneaker .popular {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: inline-grid;
+  outline: 1px solid black;
+  text-align: center;
+  background-color:white;
 }
 
 .details p{
@@ -116,8 +121,6 @@ code {
     
     
 }
-
-  
 
 #year{
   float: left;
