@@ -50,8 +50,7 @@ img{
 }
 #details-img{
   text-align: center;
-  height: 500px;
+  height: 400px;
   width: auto;
-  margin-top: -100px;
-  margin-bottom: -100px;
+  margin-bottom: -50px;
 }

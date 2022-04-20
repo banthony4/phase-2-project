@@ -14,17 +14,9 @@ function App() {
   const [wishlist, setWishlist] = useState([])
   
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Host': 'the-sneaker-database.p.rapidapi.com',
-        'X-RapidAPI-Key': '114304eb3bmshd241e59ec60bb79p1a3acbjsne5e39a45f3af'
-      }
-    };
-    fetch('https://the-sneaker-database.p.rapidapi.com/sneakers?limit=100', options)
-    .then(response => response.json())
-    .then(response => setSneakers(response.results))
-    .catch(err => console.error(err));
+    fetch('http://localhost:4000/sneakers')
+    .then(r => r.json())
+    .then(data => setSneakers(data))
   }, []) 
 
   const addToCollection = (sneak) => {

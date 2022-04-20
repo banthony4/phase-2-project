@@ -8,10 +8,10 @@ function SneakerContainer({ sneakers }) {
   }
   return (
     <div>
-      <form>
+      {/* <form>
         <label>Search:</label>
         <input tpye='text' id='name' name='name' ></input>
-        <label for='brand'>Select Brand:</label>
+        <label>Select Brand:</label>
         <select id='brand' name='brand'>
           <option value='nike'>Nike</option>
           <option value='adidas'>Adidas</option>
@@ -22,7 +22,7 @@ function SneakerContainer({ sneakers }) {
         </select>
         <input type='checkbox' id='mens' name='mens'>Mens</input>
         <input type='checkbox' id='womens' name='womens'>Womens</input>
-      </form>
+      </form> */}
       <ul className="SneakerCollection">
         {RenderSneakers()}
       </ul>
