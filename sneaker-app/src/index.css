@@ -18,11 +18,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.SneakerCollection{
-  text-align: center;
-  list-style: none;
-  width: 100%;
-}
+
 .react-project.jpg
 {
   width: 100%;
@@ -31,22 +27,47 @@ code {
   left: 20;
 }
 .Sneaker {
-  width: 400px;
-  height: 300px;
+  width: 450px;
+  height: auto;
   overflow: hidden;
   display: inline-grid;
   outline: 1px solid black;
   text-align: center;
   background-color:white;
 }
-.Sneaker .popular {
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  display: inline-grid;
+.Home{
+  text-align: center;
+}
+.Home h1{
+  color: rgb(0, 67, 212);
+  font-size: 50px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(11, 173, 248);
+}
+
+.HomeButton{
+  background-color: #ffffff07;
+  opacity: 50%;
+  font-size: 30px;
+  border-radius: 30%;
+  margin-top: -10px;
+  position: absolute;
+  bottom: -30%;
+  right: 45%;
+
+}
+
+.SneakerDetails {
+  width: 800px;
+  height: auto;
   outline: 1px solid black;
   text-align: center;
   background-color:white;
+  position: fixed;
+  top: 25%;
+  right: 25%;
+  border: 3px solid #1889ca;
+  box-shadow: 0 8px 16px 0 rgba(36, 146, 209, 0.685);
 }
 
 .details p{
@@ -118,8 +139,6 @@ code {
     padding:15px 50px;
     border-radius:5rem;
     box-shadow: 1px 2.9px 16px rgba(27,139,249,0.4);
-    
-    
 }
 
 #year{
@@ -135,6 +154,12 @@ img{
   text-align: center;
   height: 200px;
   width: auto;
-  position: relative;
-  bottom: 0;
+}
+
+.filters{
+  display: inline-block;
+  margin-left: 40px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  outline: black;
 }

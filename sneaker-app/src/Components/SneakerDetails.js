@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function SneakerDetails({ addToCollection, addToWishlist }) {
   const [sneaker, setSneaker] = useState({})
   const { id } = useParams();
-  const { image, name, story, releaseDate, retailPrice } = sneaker
+  const { image, name, releaseDate, retailPrice } = sneaker
 
   useEffect(() => {
     fetch(`http://localhost:4000/sneakers/${id}`)
@@ -44,12 +44,15 @@ function SneakerDetails({ addToCollection, addToWishlist }) {
       <h3>Name: {name}</h3>
       <img id="details-img" src={image} alt={name}></img>
       <p>Release Date: {releaseDate}</p>
-      <p>Price: {retailPrice}</p>
-      <p>Story:</p>
-      {story ? <p>{story}</p> : 'N/A'}
+      <p>Price: ${retailPrice}</p>
+      <p>Gender: {sneaker.gender}</p>
       <br></br>
-      <button onClick={handleBuyNow}>Buy Now</button>
-      <button onClick={handleWishlist} >Add to Wishlist</button>
+      <Link to="/sneakercollection">
+        <button onClick={handleBuyNow}>Buy Now</button>
+      </Link>
+      <Link to='/wishlist' >
+        <button onClick={handleWishlist} >Add to Wishlist</button>
+      </Link>
     </div>
   );
 }

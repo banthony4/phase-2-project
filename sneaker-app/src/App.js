@@ -13,6 +13,9 @@ function App() {
   const [mostPopular, setMostPopular] = useState([])
   const [collection, setCollection] = useState([])
   const [wishlist, setWishlist] = useState([])
+  const [search, setSearch] = useState("")
+  const [brandSelect, setBrandSelect] = useState('All')
+  const [genderSelect, setGenderSelect] = useState('')
   
   useEffect(() => {
     fetch('http://localhost:4000/sneakers')
@@ -42,6 +45,30 @@ function App() {
     setWishlist(sneaks => [...sneaks, newSneaker])
   }
 
+  const filterSneakers = () => {
+    let filteredSneaks = [...sneakers]
+    if (search === '') {
+      filteredSneaks = [...sneakers]
+    } else {
+      filteredSneaks = [...sneakers].filter(sneak => sneak.name.toLowerCase().includes(search.toLowerCase()) || sneak.shoe.toLowerCase().includes(search.toLowerCase()))
+    } 
+
+    let filteredSneaks2 = [...filteredSneaks]
+    if(brandSelect === 'All') {
+      filteredSneaks2 = [...filteredSneaks]
+    } else {
+      filteredSneaks2 = [...filteredSneaks].filter(sneak => sneak.brand.toLowerCase() === brandSelect.toLowerCase())
+    }
+
+    let filteredSneaks3 = [...filteredSneaks2]
+    if(genderSelect === '') {
+      filteredSneaks3 = [...filteredSneaks2]
+    } else {
+      filteredSneaks3 = [...filteredSneaks2].filter(sneak => sneak.gender.toLowerCase() === genderSelect.toLowerCase())
+    }
+    return filteredSneaks3
+  }
+
   return (
     <div className="App">
       <Header className="App-header">
@@ -55,7 +82,7 @@ function App() {
           <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />
         </Route>
         <Route path="/sneakers" >
-          <SneakerContainer sneakers={sneakers} />
+          <SneakerContainer sneakers={filterSneakers()} setSearch={setSearch} setBrand={setBrandSelect} setGender={setGenderSelect} />
         </Route>
         <Route path='/sneakercollection' >
           <SneakerCollection collection={collection} />
