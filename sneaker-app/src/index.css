@@ -160,6 +160,9 @@ img{
   display: inline-block;
   margin-left: 40px;
   padding: 10px;
-  background-color: rgb(255, 255, 255);
-  outline: black;
+  background-color: rgba(0, 0, 0, 0.623);
+  color: white;
+  font-family: fantasy;
+  letter-spacing: 2.2px;
+  /* outline: black; */
 }

@@ -24,10 +24,11 @@ function Home({mostPopular}) {
       loop 
       muted
       style={{
-        position: "relative",
+        position: "absolute",
         width:"100%",
         // left: "50%" ,
-        top:"17%" ,
+        top:"80%" ,
+        right:'0%',
         height:"100%",
         // objectFit:"cover",
         // transform: "translate(-50%,-50%)",

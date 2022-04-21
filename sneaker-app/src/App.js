@@ -69,6 +69,7 @@ function App() {
     return filteredSneaks3
   }
 
+
   return (
     <div className="App">
       <Header className="App-header">
@@ -82,7 +83,7 @@ function App() {
           <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />
         </Route>
         <Route path="/sneakers" >
-          <SneakerContainer sneakers={filterSneakers()} setSearch={setSearch} setBrand={setBrandSelect} setGender={setGenderSelect} />
+      <SneakerContainer sneakers={filterSneakers()} search={search} setSearch={setSearch} brandSelect={brandSelect} setBrand={setBrandSelect} genderSelect={genderSelect} setGender={setGenderSelect} />
         </Route>
         <Route path='/sneakercollection' >
           <SneakerCollection collection={collection} />

@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 function SneakerDetails({ addToCollection, addToWishlist }) {
   const [sneaker, setSneaker] = useState({})
   const { id } = useParams();
-  const { image, name, releaseDate, retailPrice } = sneaker
+  const { image, title, releaseDate, retailPrice } = sneaker
 
   useEffect(() => {
     fetch(`http://localhost:4000/sneakers/${id}`)
@@ -41,8 +41,8 @@ function SneakerDetails({ addToCollection, addToWishlist }) {
   return (
     <div className="SneakerDetails">
       <h1>Sneaker Details:</h1>
-      <h3>Name: {name}</h3>
-      <img id="details-img" src={image} alt={name}></img>
+      <h3>Name: {title}</h3>
+      <img id="details-img" src={image} alt={title}></img>
       <p>Release Date: {releaseDate}</p>
       <p>Price: ${retailPrice}</p>
       <p>Gender: {sneaker.gender}</p>
