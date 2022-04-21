@@ -50,7 +50,7 @@ function SneakerContainer({ sneakers, setSearch, setBrand, search, brandSelect,s
           <input type='checkbox' value={genderSelect} name='women' onChange={handleChange} checked={genderSelect === 'women' ? true : false} />
         </label>
       </div>
-      <ul>
+      <ul className='allSneakers'>
         {renderSneakers()}
       </ul>
     </div>

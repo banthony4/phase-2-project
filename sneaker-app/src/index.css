@@ -35,6 +35,9 @@ code {
   text-align: center;
   background-color:white;
 }
+.Sneaker:hover{
+  box-shadow: 0 8px 50px 0 rgba(36, 146, 209, 0.685);
+}
 .Home{
   text-align: center;
 }
@@ -93,9 +96,6 @@ code {
   opacity: .80;
   border-radius:5rem;
     box-shadow: 1px 2.9px 16px rgba(27,139,249,0.4);
-    
-  
-  
 }
 .button1{
   text-align: center; 
