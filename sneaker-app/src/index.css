@@ -114,11 +114,11 @@ code {
   box-shadow: 1px 2.9px 16px rgba(27,139,249,0.4);
   }
 /* .button1:hover{opacity: 1} */
-.button1:hover{
+.button1:hover, .button1.active{
   opacity: 1;
   background-color: lightblue;
   color: black;}
-.button:hover{
+.button:hover, .button.active{
   opacity:1;
   background-color:lightblue;
   color: black;
@@ -168,4 +168,14 @@ img{
   font-family: fantasy;
   letter-spacing: 2.2px;
   /* outline: black; */
+}
+
+h2{
+  display: inline-block;
+  margin-left: 40px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.623);
+  color: white;
+  font-family: fantasy;
+  letter-spacing: 2.2px;
 }

@@ -10,6 +10,7 @@ function SneakerCollection({collection}) {
 
   return (
     <div className="SneakerCollection">
+        <h2>Your Collection:</h2>
       <ul>
         {renderCollection()}
       </ul>

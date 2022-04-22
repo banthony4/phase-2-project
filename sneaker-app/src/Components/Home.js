@@ -14,7 +14,7 @@ function Home({mostPopular}) {
       <br></br>
       <br></br>
       <br></br>
-      <h1>Most Popular:</h1>
+      <h2>Most Popular:</h2>
       <div>
         {renderMostPopular()}
       </div>

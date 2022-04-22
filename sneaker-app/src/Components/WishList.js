@@ -10,6 +10,7 @@ function WishList({ wishlist }) {
 
   return (
     <div className="WishList">
+      <h2>Your Wishlist:</h2>
       <ul>
         {renderWishlist()}
       </ul>
