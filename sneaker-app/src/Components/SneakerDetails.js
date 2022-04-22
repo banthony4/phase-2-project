@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-function SneakerDetails({ addToCollection, addToWishlist }) {
+function SneakerDetails({ addToCollection, addToWishlist, removeFromWishList }) {
   const [sneaker, setSneaker] = useState({})
   const { id } = useParams();
   const { image, title, releaseDate, retailPrice } = sneaker
@@ -13,17 +13,24 @@ function SneakerDetails({ addToCollection, addToWishlist }) {
   },[id])
 
   const handleBuyNow = () => {
+    if(fetch(`http://localhost:4000/wishlist/${id}`)){
+      fetch(`http://localhost:4000/wishlist/${id}`, {
+        method: "DELETE"
+      })
+      .then(removeFromWishList(sneaker))
+    }
     fetch('http://localhost:4000/collection',{
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify(sneaker)
-    })
-    .then(r => r.json())
-    .then(newSneaker => addToCollection(newSneaker))
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify(sneaker)
+        })
+        .then(r => r.json())
+        .then(newSneaker => addToCollection(newSneaker))
   }
+
   const handleWishlist = () => {
     fetch('http://localhost:4000/wishlist',{
       method: 'POST',

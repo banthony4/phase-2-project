@@ -20,7 +20,7 @@ function SneakerContainer({ sneakers, setSearch, setBrand, search, brandSelect,s
     <div>
       <br></br>
       <div className='filters'>
-      <strong>Set Filters:</strong>
+      {/* <strong>Set Filters:</strong> */}
       <br></br>
         <label >
           Search:

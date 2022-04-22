@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header>
+    <header className='appHeader'>
       <nav>
       <Link to="/" style={{borderBottom: "none"}}>
           <h1 className="branding">

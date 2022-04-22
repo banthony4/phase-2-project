@@ -44,6 +44,10 @@ function App() {
   const addToWishlist = (newSneaker) => {
     setWishlist(sneaks => [...sneaks, newSneaker])
   }
+  const removeFromWishList = (sneaker) => {
+    console.log(sneaker)
+    setWishlist(wishlist.filter(sneaks => sneaks.id !== sneaker.id))
+  }
 
   const filterSneakers = () => {
     let filteredSneaks = [...sneakers]
@@ -72,7 +76,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header className="App-header">
+      <Header className="App-Header">
         Sneaker App
       </Header>
       <Switch>
@@ -80,7 +84,7 @@ function App() {
           <Home mostPopular={mostPopular}/>
         </Route>
         <Route path="/sneakers/:id/details" >
-          <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} />
+        <SneakerDetails addToCollection={addToCollection} addToWishlist={addToWishlist} removeFromWishList={removeFromWishList} />
         </Route>
         <Route path="/sneakers" >
       <SneakerContainer sneakers={filterSneakers()} search={search} setSearch={setSearch} brandSelect={brandSelect} setBrand={setBrandSelect} genderSelect={genderSelect} setGender={setGenderSelect} />

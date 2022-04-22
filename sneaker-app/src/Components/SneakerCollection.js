@@ -1,7 +1,6 @@
 import Sneaker from "./Sneaker"
 
 function SneakerCollection({collection}) {
-  console.log('collection: ', collection);
 
   const renderCollection = () => {
     return collection.map(sneak => {
